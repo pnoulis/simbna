@@ -1,0 +1,64 @@
+* Simbna
+Simbna pronounced Simba *(the n is silent) *(just like the character from Lion
+King), which is short for 'simple build not autotools' is an extremely
+rudimentary build "system" heavily influenced by GNU Autotools and general GNU
+hacker culture. It's focus is on small projects of any language that do not want
+to make use of a full blown build system, have no need for it, or one does not
+even exist for their language, but could do with some automation and
+standardization. One might even enjoy the feeling one gets when their tool is
+simple enough to be able to grasp it in whole. (for those of us with small
+brains!)
+
+Simbna makes use of the same basic tools used by GNU Autotools. GNU Bash (not
+sh), GNU Make and GNU M4 for their nature of usually being the lowest common
+denominator with the exception of m4. The procedure of building is exactly the
+same, requiring the user to:
+
+#+begin_src shell
+  ./configure
+  make
+  sudo make install
+#+end_src
+
+The reasons I decided to device my own build "system" are:
+
+1. To understand what it means to "build" programs.
+2. Because the projects I usually work with are small in size allowing me to use
+   a simpler build tool and reap the benefits, such as greater transparency into
+   the build process, ease of modification, and not requiring to learn some DSL
+   or a particular tool and all of its accompanying infrastructure (autotools).
+3. Because its FUUUUUN. (yes I am not the most popular kid in the block)
+
+* Configure stage
+The configure script at the root of the application is responsible for:
+
+1. Analyzing the build environment
+2. Gathering user input through command line arguments such as feature flags
+   that influence the shape of the final executable and its installation
+   location.
+3. The production of a Makefile used for building the application.
+4. Setting up a development environment with the --dev flag, if that is what the
+   local copy will be used for.
+
+The analysis stage is very important. If it determines that the build
+environment does not fit the requirements it halts operations and a Makefile is
+never produced.
+
+The goals of the analysis are to:
+
+1. Determine the location and version of project dependencies.
+
+   If the dependencies are missing, the program cannot be build and as such
+   operations are halted.
+
+2. Determine system type, processor architecture, processor variant, system
+   libraries and other such important information.
+
+   If the information gathered is not sufficient or if the application cannot be
+   build on the particular system then operations are halted.
+
+* Building stage
+* Installation stage
+* Developing stage
+* Standard Makefile targets
+* User defined Makefile and configure
