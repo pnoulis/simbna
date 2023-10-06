@@ -36,13 +36,57 @@ is simple enough to be able to grasp it in whole. (for those of us with a small
 brain!)
 
 
-### Built with
-
 ## Getting started
+
+Simbna can only be used in unix-like OS's. It does not support Windows.
+
+However one may use the windows subsystem for linux(wsl) or cygwin.
 
 ### Prerequisites
 
+- git
+- bash
+
+  The bash version in my local development environment is:
+
+  GNU bash, version 5.1.16(1)-release (x86_64-pc-linux-gnu)
+
 ### Installation
+
+```bash
+git clone git@github.com:pnoulis/simbna.git
+./configure --prefix=XDG
+make && make install
+```
 
 ## Usage
 
+```bash
+# Create a project
+mkdir ~/projects/bubbly
+cd ~/projects/bubbly
+# Initialize simbna
+simbna --init .
+```
+
+## Development
+
+### Configuring simbna for development
+
+```bash
+./configure --dev
+```
+
+## Contributing
+
+1. Fork the project
+2. Open a pull request
+
+## License
+Distributed under the GPLv3 License. See `LICENSE.txt` for more information.
+
+## Contact
+
+Pavlos noulis - pavlos.noulis@gmail.com
+
+project link - [Simbna](https://github.com/pnoulis/simbna)
