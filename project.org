@@ -62,3 +62,28 @@ The goals of the analysis are to:
 * Developing stage
 * Standard Makefile targets
 * User defined Makefile and configure
+* sib  components
+*** Sib configuration files
+Sib can be configured through environment variables and configuration files.
+
+Sib looks for its configuration files in the usual places.
+
+/etc/sib
+
+*** Configure template rules
+*** Makefile template rules
+* Simba input
+simbna .
+simbna .
+* Workflow using simbna
+*** Initialize a new project
+mkdir ~/tmp/new-project
+simbna init
+simbna init -y
+
+simbna .
+
+* TODO read environment variables
+* TODO find templates
+* Initialize a project with sib
+** transfer templates within a repository

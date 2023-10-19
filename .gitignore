@@ -33,3 +33,7 @@ log/
 
 # WSL2
 *:Zone.Identifier
+
+# Build artifacts
+*.o
+simbna
